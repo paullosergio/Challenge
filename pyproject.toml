@@ -45,7 +45,7 @@ preview = true
 quote-style = 'single'
 
 [tool.taskipy.tasks]
-run = 'fastapi dev app/app.py'
+run = 'docker compose up --build'
 pre_test = 'task lint'
 test = 'pytest --cov=app -vv'
 post_test = 'coverage html'

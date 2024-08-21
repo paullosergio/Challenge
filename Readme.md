@@ -17,6 +17,7 @@ Uma aplicação de gerenciamento de tarefas (To-dos) construída com FastAPI e S
 - Autenticação de usuário com tokens JWT.
 - Criação, leitura, atualização e exclusão de usuários.
 - Criação, leitura, atualização e exclusão de tarefas.
+- Integração com api externa para validação de cpf.
 - Suporte a filtragem e paginação de tarefas.
 - Logs para monitoramento e depuração.
 

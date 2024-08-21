@@ -54,6 +54,7 @@ Isso iniciará os serviços definidos no docker-compose.yml, incluindo o banco d
 ### Usando o Poetry
 
 ```bash
+poetry install
 task run
 ```
 

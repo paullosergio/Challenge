@@ -27,5 +27,9 @@ jobs:
       - name: Instalar dependências
         run: poetry install
 
+      - name: Test connectivity with the API
+        run: |
+          curl -X GET "https://api.invertexto.com/v1/validator?token=${{ secrets.API_TOKEN }}&value=01303175002&type=cpf"
+
       - name: Executar testes
         run: poetry run task test

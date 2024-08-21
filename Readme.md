@@ -67,6 +67,7 @@ task run
 Para garantir que a aplicação está funcionando corretamente, você pode executar os testes automatizados. Siga os passos abaixo para testar o projeto:
 
   ```bash
+  poetry install
   task test
   ```
 

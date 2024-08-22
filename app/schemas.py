@@ -86,7 +86,7 @@ class TodoSchema(BaseModel):
             max_length=150,
         ),
     ]
-    state: Annotated[TodoState, Field(description='State', example='Draft', max_length=50)]
+    state: Annotated[TodoState, Field(description='State', example='draft', max_length=10)]
 
 
 class TodoPublic(TodoSchema):

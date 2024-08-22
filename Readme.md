@@ -20,6 +20,7 @@ Uma aplicação de gerenciamento de tarefas (To-dos) construída com FastAPI e S
 - Integração com api externa para validação de cpf.
 - Suporte a filtragem e paginação de tarefas.
 - Logs para monitoramento e depuração.
+- Nginx para balanceamento de carga.
 
 ## Pré-requisitos
 

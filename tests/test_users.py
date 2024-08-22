@@ -9,7 +9,7 @@ def test_create_user(client):
         json={
             'username': 'alice',
             'email': 'alice@example.com',
-            'password': 'secret',
+            'password': 'secret11',
             'cpf': '01303175002',
         },
     )
@@ -26,7 +26,7 @@ def test_create_user_username_exist(client, user):
         json={
             'username': user.username,
             'email': 'alice@example.com',
-            'password': 'secret',
+            'password': 'secret11',
         },
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
@@ -39,7 +39,7 @@ def test_create_user_email_exist(client, user):
         json={
             'username': 'Alice',
             'email': user.email,
-            'password': 'secret',
+            'password': 'secret11',
         },
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
@@ -52,7 +52,7 @@ def test_create_invalid_cpf(client, user):
         json={
             'username': 'Alice',
             'email': 'test@teste.com',
-            'password': 'secret',
+            'password': 'secret11',
             'cpf': '11111111111',
         },
     )

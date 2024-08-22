@@ -91,6 +91,18 @@ def update_user(
         logger.warning('Forbidden update attempt by user ID: %d', current_user.id)
         raise HTTPException(status_code=HTTPStatus.FORBIDDEN, detail='Not enough permissions')
 
+    existing_user = session.scalar(
+        select(User).where((User.email == user.email) | (User.username == user.username))
+    )
+
+    if existing_user:
+        if existing_user.email == user.email:
+            logger.warning('Email %s is already in use by another user', user.email)
+            raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Email already in use')
+        if existing_user.username == user.username:
+            logger.warning('Username %s is already in use by another user', user.username)
+            raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Username already in use')
+
     current_user.username = user.username
     current_user.password = get_password_hash(user.password)
     current_user.email = user.email

@@ -67,12 +67,21 @@ task run
 Antes de testar o projeto, será necessário adicionar as seguintes variáveis de ambiente:
 
 ### Adicione as Variáveis de Ambiente
+No linux:
 ```bash
 export DATABASE_URL="postgresql+psycopg://app_user:app_password@localhost:5432/app_db"
 export SECRET_KEY='Crie uma secret key própria'
 export ALGORITHM='HS256'
 export ACCESS_TOKEN_EXPIRE_MINUTES=30
 export API_TOKEN='Criar um token em https://api.invertexto.com/api-validador-cpf-cnpj'
+```
+No windows:
+```bash
+$env:DATABASE_URL="postgresql+psycopg://app_user:app_password@localhost:5432/app_db"
+$env:SECRET_KEY="Crie uma secret key própria"
+$env:ALGORITHM="HS256"
+$env:ACCESS_TOKEN_EXPIRE_MINUTES="30"
+$env:API_TOKEN='Criar um token em https://api.invertexto.com/api-validador-cpf-cnpj'
 ```
 
 Para garantir que a aplicação está funcionando corretamente, você pode executar os testes automatizados. Siga os passos abaixo para testar o projeto:

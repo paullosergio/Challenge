@@ -27,7 +27,7 @@ CurrentUser = Annotated[User, Depends(get_current_user)]
 def create_todo(todo: TodoSchema, user: CurrentUser, session: Session):
     """
     Creates a new todo item in the database.
-    
+
     Allowed values to state: [draft, todo, doing, done, trash]
 
     Args:
